@@ -11,11 +11,11 @@
 
 # samples array 
   Second input field is samples array, which have a format like this ```[["sample-1", "sample-2"], ["sample-3"]]```
-  Please noticed that input format have to be use "" not '', like this ```[["sample-1"]]``` not like this ```[['sample-1']]```
+  Please noticed that input format have to be use ```**""**``` not ```**''**```, like this ```[["sample-1"]]``` not like this ```[['sample-1']]```
 
 # reagentes array
   Third input field is reagents array, which have a format like this ```[["blue"], ["red", "green"]]```, please input colors name for better visualization
-  Please noticed that input format have to be use **""** not **''**, like this ```[["blue"]]``` not like this ```[['blue']]```
+  Please noticed that input format have to be use ```**""**``` not ```**''**```, like this ```[["blue"]]``` not like this ```[['blue']]```
   Also a size of reagents have to be equal size of samples
 
 # replicates array
