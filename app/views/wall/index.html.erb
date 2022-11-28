@@ -1,0 +1,18 @@
+<div>
+		<div>
+			<% if @plates %>
+				<div class="justify-content-around py-4 m-1">
+					<% for plate in @plates %>
+						<div class="d-flex justify-content-around py-4 m-1 "> 
+							<%= render 'plate', plate: plate %>
+						</div>
+					<% end %>
+				</div>
+				<div class="d-flex justify-content-center">
+          <%= link_to "back", root_path, class: "btn btn-success btn-lg btn-block gradient-custom-4 text-body"   %>
+        </div>
+			<% else %>
+				<%= render "form"%>
+			<% end %>	
+		</div>
+</div>

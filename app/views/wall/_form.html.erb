@@ -1,0 +1,65 @@
+<section class="h-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" >
+      <div class="col-lg-10 col-xl-9">
+        <div class="card rounded-3">
+         
+          <div class="card-body p-4 p-md-5">
+            <div class="container mb-1 mt-1 justify-content-center ">
+              <% if @errors %>
+                <% @errors.each do |error| %>
+                  <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            
+            <%= form_with url: "/wall", method: :post,  class: "px-md-2", local: true, data: { turbo: false } do |form| %>
+              <div class="flex">
+                <div class="form-group form-outline mb-4">
+                  <label class="mr-sm-2"  for="plateSize">Plate Size</label>
+                  <select  class="form-select form-select-sm-2 mb-2" name="wall[plate_size]" id="plateSize">
+                    <option value="96" selected>96</option>
+                    <option value="384">384</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-outline mb-4">
+                  <label for="samples">Samples</label>
+                  <input type="text" name="wall[samples]" class="form-control" id="samples" placeholder='[["sample-1", "sample-2", "sample-3"], ["sample-1", "sample-2", "sample-3"], ["sample-5", "sample-4"]]'>
+                  <small id="samplesHelp" class="form-text text-muted">(use this kind of input [["sample 1"]] not use [['sample 1']])</small>
+                </div>
+
+                <div class="form-group form-outline mb-4">
+                  <label for="reagents">Reagents</label>
+                  <input type="text" name="wall[reagents]" class="form-control" id="reagents" placeholder='[["pink", "blue", "red"], ["green", "blue"], ["green"]]'>
+                  <small id="reagentsHelp" class="form-text text-muted">
+                    <span>(use colors for vizualization)</span>
+                    <span>(use this kind of input [["blue"]] not use [['blue']])</span>
+                  </small>
+                </div>
+
+                <div class="form-group form-outline mb-4">
+                  <label for="replicates">Replicates</label>
+                  <input type="text" name="wall[replicates]" class="form-control" id="replicates" placeholder='[1, 2, 3]'>
+                  <small id="replicatesHelp" class="form-text text-muted">(use this kind of input [1, 2, 3])</small>
+                </div>
+
+                <div class="d-flex justify-content-center mb-4">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">create wall</button>
+                </div>
+                 <div class="d-flex justify-content-center ">
+                  <%= link_to "back", root_path, class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"   %>
+                </div>
+                
+              </div>
+
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'wall#index'
+  get '/wall', to: 'wall#index'
+  post '/wall', to: 'wall#create', as: :walls
 end
