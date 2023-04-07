@@ -91,6 +91,8 @@ module PlatesCreator
         end  
       end
     end
+
+    @result.sort!
   end
 
   def assign_parameters(parameters)
@@ -98,8 +100,11 @@ module PlatesCreator
     @plates = []
     @plate_size = parameters[:plate_size] || nil
     @replicates = parameters[:replicates] || []
-    @samples = parameters[:samples] || []
-    @reagents = parameters[:reagents] || []
+   
+    samples = parameters[:samples] || ""
+    reagents = parameters[:reagents] || ""
+    @samples = samples.gsub(/\b([\w-]+)\b/, '"\1"')
+    @reagents = reagents.gsub(/\b([\w-]+)\b/, '"\1"')
   end
 
 

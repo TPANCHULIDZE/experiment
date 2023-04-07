@@ -1,5 +1,5 @@
 class Wall
-  include PlatesCreator
+  include PlatesCreator # ./concerns/plates_creator.rb
   
   def initialize(parameters = {})   
     assign_parameters(parameters)
